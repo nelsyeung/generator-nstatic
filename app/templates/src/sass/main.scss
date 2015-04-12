@@ -1,0 +1,11 @@
+/**
+ * Main stylesheet
+ *
+ * This file act as a concatenation of partials and stylesheets,
+ * therefore it should only contain imports and no actual styling.
+ */
+
+@import "init";
+@import "normalize";
+@import "layout";
+@import "modules";
