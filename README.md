@@ -1,46 +1,46 @@
-# generator-nstatic [![Build Status](https://secure.travis-ci.org/nelsyeung/generator-nstatic.png?branch=master)](https://travis-ci.org/nelsyeung/generator-nstatic)
+# nStatic generator [![Build Status](https://secure.travis-ci.org/nelsyeung/generator-nstatic.png?branch=master)](https://travis-ci.org/nelsyeung/generator-nstatic)
 
-> [Yeoman](http://yeoman.io) generator
+> [Yeoman](http://yeoman.io) generator for a static website. It lets you quickly set up a project with sensible defaults and best practices. Yet so minimal that everything can easily be changed to your needs.
 
+There are too many generators that generates projects with too many tools that one might not need and complicated setup such that editing the project becomes difficult. This generator aims to scaffold a simple structure, starting code and configurations. Even this generator is aimed to have a simple code base. Currently this generator will generate a simple setup without tests.
 
 ## Getting Started
 
-### What is Yeoman?
-
-Trick question. It's not a thing. It's this guy:
-
-![](http://i.imgur.com/JHaAlBJ.png)
-
-Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
-
-Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
-
+Install all the required packages:
 ```bash
-npm install -g yo
+npm install -g bower yo generator-nstatic
 ```
 
-### Yeoman Generators
-
-Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
-
-To install generator-nstatic from npm, run:
-
-```bash
-npm install -g generator-nstatic
+Install `grunt-cli` or `gulp` depending on your needs.
+```
+npm install -g grunt-cli
+npm install -g gulp
 ```
 
-Finally, initiate the generator:
+Make a new directory, and `cd` into it:
+```
+mkdir my-project && cd $_
+```
 
+Initiate the generator:
 ```bash
 yo nstatic
 ```
 
-### Getting To Know Yeoman
+That's it! Run `grunt` or `gulp` depending on what you've chosen and load up the website with `http://localhost:3000`.
 
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
 
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
+## What's inside
+* connect
+* sass
+* autoprefixer
+* watch
+* wiredep
+* usemin
+* AngularJS
+* jQuery
 
+I try to keep the amount of tools to the minimal as well. It includes a jshintrc file but not JSHint since linting can be done via the editor. Please add any other configurations to your needs.
 
 ## License
 
