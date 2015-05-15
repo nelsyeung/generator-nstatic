@@ -9,33 +9,49 @@ module.exports = yeoman.generators.Base.extend({
 	},
 
 	prompting: function () {
-		// var done = this.async();
+		var done = this.async();
 
-		// Have Yeoman greet the user.
 		this.log(yosay(
-			'Welcome to the well-made ' + chalk.red('nStatic') + ' generator!'
+			'Welcome to ' + chalk.red('nStatic') + ' generator, where everything is nice, neat and minimal.'
 		));
 
-		// var prompts = [{
-		//     type: 'confirm',
-		//     name: 'someOption',
-		//     message: 'Would you like to enable this option?',
-		//     default: true
-		// }];
+		var prompts = [{
+			type: 'list',
+			name: 'buildSystem',
+			message: 'Would you like to use Gulp or Grunt?',
+			choices: ['Gulp', 'Grunt'],
+			default: 0
+		}];
 
-		// this.prompt(prompts, function (props) {
-		//     this.someOption = props.someOption;
-		//
-		//     done();
-		// }.bind(this));
+		this.prompt(prompts, function(props) {
+			this.buildSystem = props.buildSystem;
+
+			done();
+		}.bind(this));
 	},
 
 	writing: {
 		app: function () {
-			this.fs.copy(
-				this.templatePath('_package.json'),
-				this.destinationPath('package.json')
-			);
+			if (this.buildSystem === 'Gulp') {
+				this.fs.copy(
+					this.templatePath('_package-gulp.json'),
+					this.destinationPath('package.json')
+				);
+				this.fs.copy(
+					this.templatePath('_gulpfile.js'),
+					this.destinationPath('gulpfile.js')
+				);
+			}
+			else {
+				this.fs.copy(
+					this.templatePath('_package-grunt.json'),
+					this.destinationPath('package.json')
+				);
+				this.fs.copy(
+					this.templatePath('_Gruntfile.js'),
+					this.destinationPath('Gruntfile.js')
+				);
+			}
 			this.fs.copy(
 				this.templatePath('_bower.json'),
 				this.destinationPath('bower.json')
@@ -44,9 +60,10 @@ module.exports = yeoman.generators.Base.extend({
 				this.templatePath('src'),
 				this.destinationPath('src')
 			);
-		},
 
-		projectfiles: function () {
+			this.mkdir('src/images');
+			this.mkdir('src/css');
+
 			this.fs.copy(
 				this.templatePath('editorconfig'),
 				this.destinationPath('.editorconfig')

@@ -1,18 +1,8 @@
 /**
  * Initialisation
  *
- * Contains all shared global variables and imports to all shared partials.
+ * Contains all global variables and imports to all shared partials.
  */
-
-/* =============================================================================
-   Libraries to be shared with all .scss files.
-   ============================================================================= */
-
-$visual-grid: false !global;
-$grid-columns: 24 !global;
-
-@import "bourbon/bourbon";
-@import "neat/neat";
 
 /* =============================================================================
    Variables
