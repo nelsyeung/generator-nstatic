@@ -12,6 +12,7 @@ var paths = {
 
 gulp.task('connect', function() {
 	plugins.connect.server({
+		port: 3000,
 		root: paths.src,
 		livereload: true
 	});
