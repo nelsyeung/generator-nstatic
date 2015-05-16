@@ -1,6 +1,6 @@
 # nStatic generator [![Build Status](https://secure.travis-ci.org/nelsyeung/generator-nstatic.png?branch=master)](https://travis-ci.org/nelsyeung/generator-nstatic)
 
-> [Yeoman](http://yeoman.io) generator for a static website. It lets you quickly set up a project with sensible defaults and best practices. Yet so minimal that everything can easily be changed to your needs.
+> [Yeoman](http://yeoman.io) generator for a nice, minimal and static web project. It lets you quickly set up a project with sensible defaults and best practices. Yet so minimal that everything can easily be changed to your needs.
 
 There are too many generators that generates projects with too many tools that one might not need and complicated setup such that editing the project becomes difficult. This generator aims to scaffold a simple structure, starting code and configurations. Even this generator is aimed to have a simple code base. Currently this generator will generate a simple setup without tests.
 
