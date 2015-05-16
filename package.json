@@ -20,7 +20,14 @@
     "app"
   ],
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator",
+    "scaffold",
+    "framework",
+    "component",
+    "front-end",
+    "app",
+    "minimal",
+    "static"
   ],
   "dependencies": {
     "yeoman-generator": "^0.18.9",
